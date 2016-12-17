@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Portal Something</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+        <!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+    </head>
+	<body>
+	    <div class="page-header">
+	        <h1><a href="/">Portal Something</a></h1>
+	    </div>
+	    <div class="content container">
+	        <table id="example" class="display" cellspacing="0" width="100%">
+		        <thead>
+		            <tr>
+		                <th>Title</th>
+		                <th>Name</th>
+		                <th>DateTime</th>
+		                <th></th>
+		                <th></th>
+		                <th></th>
+		            </tr>
+		        </thead>
+		
+		        <tbody>
+		        </tbody>
+			</table>
+	       	<button> <a href="http://{{ request.get_host }}/new/"> Add Item </a> </button>
+		    <button><a href="http://{{ request.get_host }}/">Home</a></button>
+	    </div>
+	    
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+		<script src="{% static 'js/portal.js' %}"></script>
+		<script type="text/javascript">
+			var posts = getPosts()
+
+		</script>
+
+	</body>
+</html>
+
+
+

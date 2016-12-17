@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Portal Something</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+    </head>
+	<body>
+	    <div class="page-header">
+	        <h1><a href="/">Portal Something</a></h1>
+	    </div>
+	    <div class="content container">
+	        <div class="row">
+	            <div class="col-md-8">
+	                <div class="post">
+	                	<h1><a href="" id="title"></a></h1>
+	                	<p id="text"></p>
+					    <p>Posted by <span id="author"></span> on  <span id="published_date"></span></p>
+					</div>
+	            </div>
+	            <div class="col-md-8">
+	            	<button> <a href="http://{{request.get_host}}/edit/{{pk}}"> Edit Item </a> </button>
+	            	<button> <a href="http://{{ request.get_host }}/new/"> Add Item </a> </button>
+		            <button><a href="http://{{ request.get_host }}/">Home</a></button>
+		            <button><a href="{http://{ request.get_host }}/list/">List Posts</a></button>
+	            </div>
+	        </div>
+	    </div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="{% static 'js/portal.js' %}"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    getPost ("{{pk}}")
+			} );
+
+
+		</script>
+
+	</body>
+</html>
+
+
+

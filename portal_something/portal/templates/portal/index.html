@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Portal Something</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+    </head>
+	<body>
+	    <div class="page-header">
+	        <h1><a href="/">Portal Something</a></h1>
+	    </div>
+	    <div class="content container">
+	        <div class="row">
+	            <div class="col-md-6 item-of-the-day">
+	                <h3>Item of The Day</h3>
+	                <div class="post">
+	                	<h1><a href="" id="title"></a>{{item.title}}</h1>
+	                	<p id="text">{{item.text}}</p>
+					    <p>Posted by <span id="author">{{item.author}}</span> on  <span id="published_date"> {{item.published_date}}</span></p>
+					</div>
+	            </div>
+	            <div class="col-md-6 last-published">
+	            	<h3>Latest Addition</h3>
+	                <div class="post">
+	                	<h1><a href="" id="title"></a>{{post.title}}</h1>
+	                	<p id="text">{{post.text}}</p>
+					    <p>Posted by <span id="author">{{post.author}}</span> on  <span id="published_date"> {{post.published_date}}</span></p>
+					</div>
+
+	            </div>
+	        </div>
+	    </div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="{% static 'js/portal.js' %}"></script>
+	</body>
+</html>
+
+
+
